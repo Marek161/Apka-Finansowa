@@ -30,39 +30,81 @@ Aplikacja Finansowa to nowoczesne narzędzie do zarządzania osobistymi finansam
 - Redux
 - Context API
 - React Router
-- Chart.js / Recharts
+- Chart.js
 - Jest & React Testing Library
 
 ## 🟢 Struktura projektu
 
 ```
 /
-├── docs/                      # Dokumentacja projektu
-│   ├── api/                   # Dokumentacja API
-│   ├── database/              # Dokumentacja bazy danych
-│   ├── developer-guide/       # Przewodniki dla deweloperów
-│   └── user-guide/            # Instrukcje dla użytkowników
-├── public/                    # Pliki publiczne
-├── src/                       # Kod źródłowy
-│   ├── api/                   # Komunikacja z API
-│   ├── components/            # Komponenty React
-│   │   ├── common/            # Wspólne komponenty
-│   │   ├── layout/            # Komponenty układu strony
-│   │   ├── transactions/      # Komponenty transakcji
-│   │   └── budget/            # Komponenty budżetu
-│   ├── contexts/              # Konteksty React
-│   ├── hooks/                 # Własne hooki
-│   ├── pages/                 # Komponenty stron
-│   ├── services/              # Serwisy aplikacji
-│   ├── store/                 # Stan Redux
-│   ├── styles/                # Style CSS
-│   └── utils/                 # Funkcje pomocnicze
-├── .env                       # Zmienne środowiskowe
-├── craco.config.js            # Konfiguracja Create React App
-├── package.json               # Konfiguracja projektu
-├── postcss.config.js          # Konfiguracja PostCSS
-└── tailwind.config.js         # Konfiguracja Tailwind CSS
+├── docs/                        # Dokumentacja projektu
+│   ├── api/                     # Dokumentacja API
+│   ├── database/                # Dokumentacja bazy danych
+│   ├── developer-guide/         # Przewodniki dla deweloperów
+│   └── user-guide/              # Instrukcje dla użytkowników
+├── public/                      # Pliki publiczne
+├── src/                         # Kod źródłowy
+│   ├── components/              # Komponenty React
+│   │   ├── common/              # Wspólne komponenty
+│   │   ├── dashboard/           # Komponenty pulpitu
+│   │   ├── layout/              # Komponenty układu strony
+│   │   ├── layouts/             # Alternatywne układy stron
+│   │   ├── transactions/        # Komponenty transakcji
+│   │   ├── calendar/            # Komponenty kalendarza
+│   │   ├── DashboardCharts.jsx  # Wykresy na pulpicie
+│   │   ├── DashboardSummary.jsx # Podsumowanie na pulpicie
+│   │   ├── DevelopmentHelper.jsx# Pomocnik trybu deweloperskiego
+│   │   ├── FirebaseIndexHelper.jsx # Pomocnik dla indeksów Firebase
+│   │   ├── Layout.jsx           # Główny układ aplikacji
+│   │   ├── LoadingScreen.jsx    # Ekran ładowania
+│   │   ├── Notifications.jsx    # Komponent powiadomień
+│   │   ├── PrivateRoute.jsx     # Komponent chronionej ścieżki
+│   │   ├── ProtectedRoute.jsx   # Komponent chronionej trasy
+│   │   ├── RecentTransactions.jsx # Ostatnie transakcje
+│   │   └── Sidebar.jsx          # Pasek boczny
+│   ├── contexts/                # Konteksty React
+│   │   ├── AuthContext.jsx      # Kontekst autoryzacji
+│   │   ├── BudgetContext.jsx    # Kontekst budżetu
+│   │   ├── NotificationsContext.jsx # Kontekst powiadomień
+│   │   └── ThemeContext.jsx     # Kontekst motywu
+│   ├── layouts/                 # Układy stron
+│   ├── pages/                   # Strony aplikacji
+│   │   ├── Auth/                # Strony autoryzacji
+│   │   ├── Budget/              # Strony budżetu
+│   │   ├── Transactions/        # Strony transakcji
+│   │   ├── Budget.jsx           # Główna strona budżetu
+│   │   ├── Dashboard.jsx        # Pulpit główny
+│   │   ├── ErrorPage.jsx        # Strona błędu
+│   │   ├── ForgotPassword.jsx   # Odzyskiwanie hasła
+│   │   ├── Login.jsx            # Logowanie
+│   │   ├── NotFound.jsx         # Strona 404
+│   │   ├── Register.jsx         # Rejestracja
+│   │   ├── Settings.jsx         # Ustawienia
+│   │   └── Transactions.jsx     # Strona transakcji
+│   ├── services/                # Serwisy aplikacji
+│   ├── store/                   # Stan Redux
+│   ├── utils/                   # Funkcje pomocnicze
+│   ├── App.js                   # Główny komponent aplikacji
+│   ├── App.jsx                  # Alternatywny komponent główny
+│   ├── firebase.js              # Konfiguracja Firebase
+│   ├── index.css                # Główny plik CSS
+│   ├── index.js                 # Punkt wejściowy aplikacji
+│   ├── reportWebVitals.js       # Raportowanie wydajności
+│   ├── serviceWorker.js         # Service Worker dla PWA
+│   └── tailwind.css             # Style Tailwind
+├── .env.example                 # Przykładowe zmienne środowiskowe (bez kluczy)
+├── .env.development.example     # Przykładowe zmienne dev (bez kluczy)
+├── .gitignore                   # Ignorowane pliki w Git
+├── PODSUMOWANIE_ZMIAN.md        # Historia zmian
+├── README.md                    # Dokumentacja projektu
+├── craco.config.js              # Konfiguracja Create React App
+├── package.json                 # Konfiguracja projektu
+├── postcss.config.js            # Konfiguracja PostCSS
+├── prepare-commit.sh            # Skrypt pomocniczy Git
+└── tailwind.config.js           # Konfiguracja Tailwind CSS
 ```
+
+> **Uwaga**: Pliki zawierające wrażliwe dane (`.env`, `.env.development`, `.env.production` itp.) oraz katalogi takie jak `node_modules` i `build` nie są dołączane do repozytorium Git.
 
 ## 🟢 Instalacja i uruchomienie
 
@@ -71,7 +113,7 @@ Aplikacja Finansowa to nowoczesne narzędzie do zarządzania osobistymi finansam
    ```bash
    npm install
    ```
-3. Skonfiguruj zmienne środowiskowe w pliku `.env`
+3. Skonfiguruj zmienne środowiskowe w pliku `.env` (skorzystaj z `.env.example`)
 4. Uruchom aplikację w trybie deweloperskim:
    ```bash
    npm start

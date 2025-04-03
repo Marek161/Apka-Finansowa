@@ -10,13 +10,13 @@ import { getStorage } from "firebase/storage";
 // Konfiguracja Firebase dla twojej aplikacji
 // Dla Firebase JS SDK w wersji 7.20.0 i późniejszych, parametr measurementId jest opcjonalny
 const firebaseConfig = {
-  apiKey: "AIzaSyD5KcI_N6pgTSpehHgEa2humrHg5oD-ubM",
-  authDomain: "aplikacja-finansowa-747ca.firebaseapp.com",
-  projectId: "aplikacja-finansowa-747ca",
-  storageBucket: "aplikacja-finansowa-747ca.firebasestorage.app",
-  messagingSenderId: "954030972041",
-  appId: "1:954030972041:web:2565aed9855d7b40057a58",
-  measurementId: "G-7YTK0CG61L",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
 // Inicjalizacja Firebase
