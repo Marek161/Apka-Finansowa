@@ -92,10 +92,6 @@ Aplikacja Finansowa to nowoczesne narzędzie do zarządzania osobistymi finansam
 │   ├── reportWebVitals.js       # Raportowanie wydajności
 │   ├── serviceWorker.js         # Service Worker dla PWA
 │   └── tailwind.css             # Style Tailwind
-├── .env.example                 # Przykładowe zmienne środowiskowe (bez kluczy)
-├── .env.development.example     # Przykładowe zmienne dev (bez kluczy)
-├── .gitignore                   # Ignorowane pliki w Git
-├── PODSUMOWANIE_ZMIAN.md        # Historia zmian
 ├── README.md                    # Dokumentacja projektu
 ├── craco.config.js              # Konfiguracja Create React App
 ├── package.json                 # Konfiguracja projektu
