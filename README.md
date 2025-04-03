@@ -9,16 +9,6 @@ Aplikacja Finansowa to nowoczesne narzędzie do zarządzania osobistymi finansam
 ![apka finansowa3](https://github.com/user-attachments/assets/eef52f2b-7b12-4728-9d98-5a3d5b8487e7)
 
 
-## 🟢 Spis treści
-
-1. [Wprowadzenie](#wprowadzenie)
-2. [Rejestracja i logowanie](#rejestracja-i-logowanie)
-3. [Pulpit główny](#pulpit-główny)
-4. [Zarządzanie transakcjami](#zarządzanie-transakcjami)
-5. [Zarządzanie budżetem](#zarządzanie-budżetem)
-6. [Ustawienia aplikacji](#ustawienia-aplikacji)
-7. [Eksport danych](#eksport-danych)
-8. [Rozwiązywanie problemów](#rozwiązywanie-problemów)
 
 ## 🟢 Funkcjonalności
 
