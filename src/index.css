@@ -1,0 +1,218 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-100;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-attachment: fixed;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
+
+  /* Efekt obramowania z poświatą */
+  .glow-border {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 15px rgba(0, 230, 169, 0.15);
+  }
+
+  .glow-border::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: transparent;
+    background-image: conic-gradient(
+      transparent,
+      rgba(0, 230, 169, 0.7),
+      transparent 30%
+    );
+    animation: rotate 4s linear infinite;
+  }
+
+  .glow-border::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 2px;
+    top: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    background: #1a1a1a;
+    border-radius: 0.4rem;
+  }
+
+  /* Animacja krążącego gradientu */
+  @keyframes rotate {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+
+  /* Animacja pulsowania */
+  @keyframes pulse {
+    0% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }
+
+  /* Animacja dla wykresu */
+  @keyframes slide-up {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* Animacja dla kart */
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.97);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-gradient-to-r from-green-400 to-cyan-500 text-white rounded-md hover:from-green-500 hover:to-cyan-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-300 shadow-lg shadow-green-500/30;
+  }
+
+  .input-field {
+    @apply block w-full rounded-md border-gray-700 bg-gray-800 shadow-sm focus:border-green-400 focus:ring-green-400 text-white transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-gray-800/80 backdrop-blur-sm rounded-lg shadow-xl p-6 border border-gray-700/40 hover:border-green-400/40 transition-all duration-300;
+  }
+
+  .animated-card {
+    @apply card animate-[fade-in_0.5s_ease-out_forwards];
+  }
+
+  .stat-card {
+    @apply card relative overflow-hidden;
+  }
+
+  .stat-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      225deg,
+      rgba(0, 230, 169, 0.1) 0%,
+      transparent 50%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .stat-value {
+    @apply text-3xl font-bold text-green-400;
+  }
+
+  .stat-label {
+    @apply text-sm text-gray-400;
+  }
+
+  .animated-bg {
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #111827, #1f2937);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .progress-bar {
+    @apply w-full h-2 rounded-full bg-gray-700 overflow-hidden;
+  }
+
+  .progress-bar-fill {
+    @apply h-full rounded-full bg-gradient-to-r from-green-400 to-cyan-500 transition-all duration-500 ease-out;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px rgba(0, 230, 169, 0.7);
+  }
+}
+
+/* Dostosowanie wyglądu paska przewijania */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00e6a9;
+}
+
+/* Style dla formularzy - czcionka zawsze jasna na ciemnym tle */
+input,
+textarea,
+select {
+  color: white !important;
+  background-color: rgba(55, 65, 81, 0.8) !important;
+  border-color: rgba(75, 85, 99, 0.6) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(156, 163, 175, 0.7) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: rgba(74, 222, 128, 0.6) !important;
+  box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.2) !important;
+}
