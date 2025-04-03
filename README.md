@@ -2,6 +2,13 @@
 
 Aplikacja Finansowa to nowoczesne narzędzie do zarządzania osobistymi finansami, zbudowane przy użyciu React i Firebase. Aplikacja umożliwia śledzenie przychodów i wydatków, zarządzanie budżetem oraz wizualizację danych finansowych.
 
+### ➡️  [LINK DO STRONY](https://apka-finansowa-git-master-marek161s-projects.vercel.app/login)  ⬅️
+
+![apka finansowa1](https://github.com/user-attachments/assets/30e3cf02-fa04-44be-a49d-c5e449673664)
+![apka finansowa2](https://github.com/user-attachments/assets/22af59fa-d55d-4743-a0c0-7978fac6ac9d)
+![apka finansowa3](https://github.com/user-attachments/assets/eef52f2b-7b12-4728-9d98-5a3d5b8487e7)
+
+
 ## 🟢 Spis treści
 
 1. [Wprowadzenie](#wprowadzenie)
