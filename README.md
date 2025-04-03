@@ -139,3 +139,7 @@ Ten projekt jest objęty licencją MIT.
 
 --
 **Autor:** Marek161
+
+🟢 Future Plans
+
+W przyszłości dodatkowe funkcjonalności. Bardziej zaawansowane zarządzanie budżetem i walutami. Integracja z wiekszą ilością kalendarzy notion itd.
