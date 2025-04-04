@@ -97,7 +97,6 @@ Aplikacja Finansowa to nowoczesne narzędzie do zarządzania osobistymi finansam
 └── tailwind.config.js           # Konfiguracja Tailwind CSS
 ```
 
-> **Uwaga**: Pliki zawierające wrażliwe dane (`.env`, `.env.development`, `.env.production` itp.) oraz katalogi takie jak `node_modules` i `build` nie są dołączane do repozytorium Git.
 
 ## 🟢 Instalacja i uruchomienie
 
